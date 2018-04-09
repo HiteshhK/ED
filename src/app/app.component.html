@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="sidebar node-palette" jsplumb-palette selector="li" surfaceId="flowchartSurface" [typeExtractor]="typeExtractor">
+  <ul>
+    <li *ngFor="let nodeType of nodeTypes" [attr.jtk-node-type]="nodeType.type" title="Drag to add new"> {{nodeType.label}} </li>
+  </ul>
+</div>
+<jsplumb-toolkit #toolkit surfaceId="flowchartSurface" jtkId="flowchart" [view]="view" [renderParams]="renderParams" [toolkitParams]="toolkitParams"
+  [nodeResolver]="nodeResolver"></jsplumb-toolkit>
+<jsplumb-miniview surfaceId="flowchartSurface"></jsplumb-miniview>

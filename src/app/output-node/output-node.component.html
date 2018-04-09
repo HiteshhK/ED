@@ -1,0 +1,15 @@
+<div [style.width]="obj.w + 'px'" [style.height]="obj.h +'px'" class="flowchart-object flowchart-output">
+  <div>
+      <div class="node-edit node-action" (click)="editNode()">
+          <i class="fa fa-pencil-square-o"></i> 
+      </div>
+      <div class="node-delete node-action" (click)="deleteNode()">
+          <i class="fa fa-times"></i>
+      </div>
+      <svg [attr.width]="obj.w" [attr.height]="obj.h">
+          <rect [attr.x]="0" [attr.y]="0" [attr.width]="obj.w" [attr.height]="obj.h"/>
+          <text text-anchor="middle" [attr.x]="obj.w/2" [attr.y]="obj.h/2" dominant-baseline="central"></text>
+      </svg>
+  </div>
+  <jtk-target port-type="target"></jtk-target>
+</div>

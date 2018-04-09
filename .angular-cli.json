@@ -19,7 +19,10 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "jsplumbtoolkit-defaults.css",
+        "jsplumbtoolkit-demo.css",
+        "syntax-highlighter.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

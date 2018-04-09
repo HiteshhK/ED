@@ -1,0 +1,10 @@
+<div [style.width]="obj.w + 'px'" [style.height]="obj.h +'px'" class="flowchart-object flowchart-start">
+  <div style="position:relative">
+      <svg [attr.width]="obj.w" [attr.height]="obj.h">
+          <ellipse [attr.cx]="obj.w/2" [attr.cy]="obj.h/2" [attr.rx]="obj.w/2" [attr.ry]="obj.h/2" class="outer"/>
+          <ellipse [attr.cx]="obj.w/2" [attr.cy]="obj.h/2" [attr.rx]="(obj.w/2) - 10" [attr.ry]="(obj.h/2) - 10" class="inner"/>
+          <text text-anchor="middle" [attr.x]="obj.w / 2" [attr.y]="obj.h / 2" dominant-baseline="central">{{obj.text}}</text>
+      </svg>
+  </div>
+  <jtk-source port-type="start" filter=".outer" filter-negate="true"></jtk-source>
+</div>

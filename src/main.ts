@@ -3,9 +3,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { jsPlumbToolkit } from 'jsplumbtoolkit';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+jsPlumbToolkit.ready(() => {
+  platformBrowserDynamic().bootstrapModule(AppModule);
+});
+
+//platformBrowserDynamic().bootstrapModule(AppModule);

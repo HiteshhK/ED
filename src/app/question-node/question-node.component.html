@@ -1,0 +1,17 @@
+<div [style.width]="obj.w + 'px'" [style.height]="obj.h +'px'" class="flowchart-object flowchart-question">
+  <div>
+      <div class="node-edit node-action" (click)="editNode(obj)">
+          <i class="fa fa-pencil-square-o"></i>
+      </div>
+      <div class="node-delete node-action" (click)="removeNode(obj)">
+          <i class="fa fa-times"></i>
+      </div>
+      <svg [attr.width]="obj.w" [attr.height]="obj.h">
+          <path [attr.d]="'M ' + obj.w/2 + ' 0 L ' + obj.w + ' ' + obj.h/2 + ' L ' + obj.w/2 + ' ' + obj.h + ' L 0 ' + obj.h/2 + ' Z'" class="outer"/>
+          <path [attr.d]="'M ' + obj.w/2 + ' 10 L ' + (obj.w-10) + ' ' + obj.h/2 + ' L ' + obj.w/2 + ' ' + (obj.h-10) + ' L 10 ' + obj.h/2 + ' Z'" class="inner"/>
+          <text text-anchor="middle" [attr.x]="obj.w/2" [attr.y]="obj.h/2" dominant-baseline="central"></text>
+      </svg>
+  </div>
+  <jtk-source port-type="source" filter=".outer"></jtk-source>
+  <jtk-target port-type="target"></jtk-target>
+</div>
